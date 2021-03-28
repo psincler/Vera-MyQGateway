@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>1</minor>
+    </specVersion>
+    <device>
+        <deviceType>urn:schemas-macrho-com:device:MyQGateway:1</deviceType>
+        <staticJson>D_MyQGateway.json</staticJson>
+        <friendlyName>myQ Gateway</friendlyName>
+        <manufacturer>LiftMaster</manufacturer>
+        <manufacturerURL>https://www.myliftmaster.com</manufacturerURL>
+        <modelName>828LM</modelName>
+        <protocol>raw</protocol>
+        <serviceList>
+            <service>
+                <serviceType>urn:schemas-macrho-com:service:MyQGateway:1</serviceType>
+                <serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+                <SCPDURL>S_MyQGateway.xml</SCPDURL>
+            </service>
+            <service>
+                <serviceType>urn:schemas-micasaverde-com:service:HaDevice:1</serviceType>
+                <serviceId>urn:micasaverde-com:serviceId:HaDevice1</serviceId>
+                <SCPDURL>S_HaDevice1.xml</SCPDURL>
+            </service>
+            <service>
+              <serviceType>urn:schemas-upnp-org:service:SwitchPower:1</serviceType>
+              <serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+              <SCPDURL>S_SwitchPower1.xml</SCPDURL>
+            </service>
+        </serviceList>
+        <handleChildren>1</handleChildren>
+        <implementationList>
+            <implementationFile>I_MyQGateway.xml</implementationFile>
+        </implementationList>
+    </device>
+</root>
+ 

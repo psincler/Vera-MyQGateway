@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<implementation>
+	<settings>
+		<protocol>raw</protocol>
+	</settings>
+  <files>L_MyQGateway.lua</files>
+	<startup>init</startup>
+	<actionList>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>ToggleDebugMode</name>
+			<run>
+				return UPnP:toggleDebugMode(lul_device)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>SetUsernamePassword</name>
+			<run>
+				return UPnP:setCredentials(lul_device, lul_settings)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+			<name>SetTarget</name>
+			<job>
+				return UPnP:changeDeviceState(lul_device, lul_settings)
+			</job>
+		</action>
+	</actionList>
+</implementation>
+ 

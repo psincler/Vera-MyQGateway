@@ -1,0 +1,439 @@
+{
+    "default_icon": "MyQ_gateway.png",
+    "state_icons": [],
+    "Tabs": [
+        {
+            "Label": {
+                "lang_tag": "tabname_control",
+                "text": "Control"
+            },
+            "Position": "0",
+            "TabType": "flash",
+            "top_navigation_tab": 1,
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "scenegroup": "1"
+                },
+                {
+                    "id": "2",
+                    "scenegroup": "1"
+                }
+            ],
+            "SceneGroup": [
+                {
+                    "id": "1",
+                    "top": "1",
+                    "left": "-0.35",
+                    "x": "2",
+                    "y": "4"
+                }
+            ],
+            "Control": [
+                {
+                    "ControlGroup": "1",
+                    "ControlPair": "1",
+                    "ControlHeader": "1",
+                    "ControlType": "label",
+                    "ControlCode": "lastAuthLbl",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "timestamp",
+                        "text": "Last Auth"
+                    },
+                    "Display": {
+                        "Top": 20,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+{
+   "ControlGroup": 1,
+"ControlCode" : "spacer1",
+   "ControlType": "spacer",
+   "HorizontalMultiplier": "1.8"
+},
+                {
+                    "ControlGroup": "1",
+                    "ControlPair": "1",
+                    "ControlHeader": "1",
+                    "ControlType": "variable",
+                    "ControlCode": "lastAuth",
+                    "top": "0.75",
+                    "left": "0",
+                    "x": 2.35,
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "Timestamp",
+                        "Top": 20,
+                        "Left": 100,
+                        "Width": 350,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "line_break",
+                    "ControlCode": "break1"
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlPair": "1",
+                    "ControlHeader": "1",
+                    "ControlType": "label",
+                    "ControlCode": "lastCheckLbl",
+                    "top": "1.5",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "LastCheck",
+                        "text": "Last Updated"
+                    },
+                    "Display": {
+                        "Top": 40,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+{
+   "ControlGroup": 1,
+"ControlCode" : "spacer2",
+   "ControlType": "spacer",
+   "HorizontalMultiplier": ".5"
+},
+                {
+                    "ControlGroup": "1",
+                    "ControlPair": "1",
+                    "ControlHeader": "1",
+                    "ControlType": "variable",
+                    "ControlCode": "lastCheck",
+                    "top": "2.25",
+                    "left": "0",
+                    "x": 2.35,
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "LastCheck",
+                        "Top": 40,
+                        "Left": 100,
+                        "Width": 350,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "line_break",
+                    "ControlCode": "break2"
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "label",
+                    "ControlCode": "debugModeLbl",
+                    "Label": {
+                        "lang_tag": "lbl_debug",
+                        "text": "Debug Mode"
+                    },
+                    "text_align": "left",
+                    "Display": {
+                        "Top": 122,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+{
+   "ControlGroup": 1,
+"ControlCode" : "spacer2",
+   "ControlType": "spacer",
+   "HorizontalMultiplier": "0.75"
+},
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "variable",
+                    "ControlCode": "debugModeText",
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "DebugModeText",
+                        "Top": 122,
+                        "Left": 110,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "button",
+                    "ControlCode": "debugMode",
+                    "Label": {
+                        "lang_tag": "set_debug",
+                        "text": "DEBUG"
+                    },
+                    "top": 2,
+                    "left": 0,
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "DebugMode",
+                        "Value": "1",
+                        "Top": 120,
+                        "Left": 230,
+                        "Width": 100,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Action": "ToggleDebugMode",
+                        "Parameters": []
+                    }
+                }
+            ]
+        },
+        {
+            "Label": {
+                "lang_tag": "myqsetup",
+                "text": "MyQ Setup"
+            },
+            "Position": "1",
+            "TabType": "flash",
+            "top_navigation_tab": 1,
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "scenegroup": "1"
+                }
+            ],
+            "SceneGroup": [
+                {
+                    "id": "1",
+                    "top": "1",
+                    "left": "-0.35",
+                    "x": "2",
+                    "y": "4"
+                }
+            ],
+            "Control": [
+                {
+                    "ControlType": "label",
+                    "ControlCode": "loginLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "logincred",
+                        "text": "SET MYQ LOGIN CREDENTIALS:"
+                    },
+                    "Display": {
+                        "Top": 120,
+                        "Left": 0,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "ControlCode": "userNameLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "username",
+                        "text": "myQ Username:"
+                    },
+                    "Display": {
+                        "Top": 145,
+                        "Left": 15,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "ControlCode": "userName",
+                    "ControlGroup": "1",
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "Username",
+                        "Top": 145,
+                        "Left": 115,
+                        "Width": 100,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+                    "ControlCode": "userNameInput",
+                    "ControlGroup": "1",
+                    "ID": "txtUsername",
+                    "Display": {
+                        "Top": 145,
+                        "Left": 260,
+                        "Width": 200,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "ControlCode": "passwordLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "password",
+                        "text": "myQ Password:"
+                    },
+                    "Display": {
+                        "Top": 170,
+                        "Left": 15,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "ControlCode": "password",
+                    "ControlGroup": "1",
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "Password",
+                        "Top": 170,
+                        "Left": 115,
+                        "Width": 100,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+                    "ControlCode": "passwordInput",
+                    "ControlGroup": "1",
+                    "ID": "txtPassword",
+                    "Display": {
+                        "Top": 170,
+                        "Left": 260,
+                        "Width": 200,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "button",
+                    "ControlCode": "updateBtn",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "cmd_UpdateNamePwd",
+                        "text": "Update"
+                    },
+                    "Display": {
+                        "Top": 158,
+                        "Left": 485,
+                        "Width": 60,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Action": "SetUsernamePassword",
+                        "Parameters": [
+                            {
+                                "Name": "newUsername",
+                                "ID": "txtUsername"
+                            },
+                            {
+                                "Name": "newPassword",
+                                "ID": "txtPassword"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "ControlCode": "foundLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "founddevices",
+                        "text": "MYQ DEVICES FOUND:"
+                    },
+                    "Display": {
+                        "Top": 210,
+                        "Left": 0,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "ControlCode": "numDoorsLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "garagedoorfound",
+                        "text": "Number of garage doors / gates found:"
+                    },
+                    "Display": {
+                        "Top": 230,
+                        "Left": 15,
+                        "Width": 150,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "ControlCode": "numDoors",
+                    "ControlGroup": "1",
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "numDoors",
+                        "Top": 230,
+                        "Left": 240,
+                        "Width": 100,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "ControlCode": "numLightsLbl",
+                    "ControlGroup": "1",
+                    "Label": {
+                        "lang_tag": "lightingfound",
+                        "text": "Number of lighting devices found:"
+                    },
+                    "Display": {
+                        "Top": 250,
+                        "Left": 15,
+                        "Width": 150,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "ControlCode": "numLights",
+                    "ControlGroup": "1",
+                    "Display": {
+                        "Service": "urn:macrho-com:serviceId:MyQGateway1",
+                        "Variable": "numLights",
+                        "Top": 250,
+                        "Left": 240,
+                        "Width": 100,
+                        "Height": 20
+                    }
+                }
+            ]
+        },
+        {
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "scenegroup": "1"
+                }
+            ],
+            "SceneGroup": [
+                {
+                    "id": "1",
+                    "top": "1",
+                    "left": "-0.35",
+                    "x": "2",
+                    "y": "4"
+                }
+            ],
+            "Label": {
+                "lang_tag": "advanced",
+                "text": "Advanced"
+            },
+            "Position": "2",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "advanced_device"
+        }
+    ],
+    "device_type": "urn:schemas-macrho-com:device:MyQGateway:1"
+}

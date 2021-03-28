@@ -1,0 +1,311 @@
+{
+	"default_icon": "MyQ_garage_open.png",
+	"state_icons": [
+		{
+			"img": "MyQ_garage_open.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 1
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_closed.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 0
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_stopped.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 3
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_opening.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 4
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_closing.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 5
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_faulted.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 7
+				}
+			]
+		},
+		{
+			"img": "MyQ_garage_offline.png",
+			"conditions": [
+				{
+					"service": "urn:upnp-org:serviceId:SwitchPower1",
+					"variable": "Status",
+					"operator": "==",
+					"value": 10
+				}
+			]
+		}
+	],
+	"x": "2",
+	"y": "4",
+	"inScene": "1",
+	"ToggleButton": 1,
+	"Tabs": [
+		{
+			"Label": {
+				"lang_tag": "ui7_tabname_control",
+				"text": "Control"
+			},
+			"Position": "0",
+			"TabType": "flash",
+			"top_navigation_tab": 1,
+			"ControlGroup": [
+				{
+					"id": "1",
+					"isSingle": "1",
+					"scenegroup": "1"
+				},
+				{
+					"id": "2",
+					"isSingle": "1",
+					"scenegroup": "1"
+				}
+			],
+			"SceneGroup": [
+				{
+					"id": "1",
+					"top": "2",
+					"left": "0",
+					"x": "2",
+					"y": "1"
+				}
+			],
+			"Control": [
+				{
+					"ControlGroup": "1",
+					"ControlType": "multi_state_button",
+					"top": "0",
+					"left": "0",
+					"states": [
+						{
+							"Label": {
+					  		"lang_tag": "ui7_general_ucase_open",
+								"text": "Open"
+							},
+							"Display": {
+								"Service": "urn:upnp-org:serviceId:SwitchPower1",
+								"Variable": "Status",
+								"Value": "1"
+							},
+							"Command": {
+								"Service": "urn:upnp-org:serviceId:SwitchPower1",
+								"Action": "SetTarget",
+								"Parameters": [
+									{
+										"Name": "newTargetValue",
+										"Value": "1"
+									},
+                  {
+										"Name": "deviceFamily",
+										"Value": "garagedoor"
+									}
+								]
+							},
+							"ControlCode": "gdo_opened"
+						},
+						{
+							"Label": {
+								"lang_tag": "ui7_general_ucase_closed",
+								"text": "Closed"
+							},
+							"Display": {
+				    	        "Service": "urn:upnp-org:serviceId:SwitchPower1",
+				    	        "Variable": "Status",
+				    	        "Value": "0"
+							},
+							"Command": {
+								"Service": "urn:upnp-org:serviceId:SwitchPower1",
+								"Action": "SetTarget",
+								"Parameters": [
+									{
+										"Name": "newTargetValue",
+										"Value": "0"
+									},
+                  {
+										"Name": "deviceFamily",
+										"Value": "garagedoor"
+									}
+								]
+							},
+							"ControlCode": "gdo_closed"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Label": {
+				"lang_tag": "ui7_advanced",
+				"text": "Advanced"
+			},
+			"Position": "1",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "advanced_device"
+		},
+		{
+			"Label": {
+				"lang_tag": "ui7_logs",
+				"text": "Logs"
+			},
+			"Position": "2",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "device_logs"
+		},
+		{
+			"Label": {
+				"lang_tag": "ui7_notifications",
+				"text": "Notifications"
+			},
+			"Position": "3",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "device_notifications"
+		},
+		{
+			"Label": {
+				"lang_tag": "ui7_device_scenes",
+				"text": "Scenes"
+			},
+			"Position": "4",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "device_scenes"
+		}
+	],
+	"sceneList": {
+		"group_1": {
+			"cmd_1": {
+				"label": "Closed",
+				"serviceId": "urn:upnp-org:serviceId:SwitchPower1",
+				"action": "SetTarget",
+				"arguments": {
+					"newTargetValue": "0",
+          "deviceFamily" : "garagedoor"
+				}
+			},
+			"cmd_2": {
+				"label": "Open",
+				"serviceId": "urn:upnp-org:serviceId:SwitchPower1",
+				"action": "SetTarget",
+				"arguments": {
+					"newTargetValue": "1",
+          "deviceFamily" : "garagedoor"
+				}
+			}
+		}
+	},
+	"eventList2": [
+		{
+			"id": 1,
+			"label": {
+				"lang_tag": "ui7_a_door_is_opened_or_closed",
+				"text": "A garage door is opened or closed"
+			},
+			"serviceId": "urn:upnp-org:serviceId:SwitchPower1",
+			"argumentList": [
+				{
+					"id": 1,
+					"dataType": "boolean",
+					"defaultValue": "",
+					"allowedValueList": [
+						{
+							"Open": "0",
+							"HumanFriendlyText": {
+								"lang_tag": "ui7_hft_door_lock_open",
+								"text": "_DEVICE_NAME_ is open"
+							}
+						},
+						{
+							"Closed": "1",
+							"HumanFriendlyText": {
+								"lang_tag": "ui7_hft_door_lock_closed",
+								"text": "_DEVICE_NAME_ is closed"
+							}
+						}
+					],
+					"name": "Status",
+					"comparisson": "=",
+					"prefix": {
+						"lang_tag": "ui7_which_mode",
+						"text": "Which mode"
+					},
+					"suffix": {}
+				}
+			]
+		},
+		{
+			"id": 2,
+			"label": {
+				"lang_tag": "ui7_lock_fail_to_operate",
+				"text": "Opener failed to operate"
+			},
+			"serviceId": "urn:upnp-org:serviceId:SwitchPower1",
+			"serviceStateTable": {
+				"sl_LockFailure": {
+					"value": "1",
+					"comparisson": "="
+				}
+			}
+		},
+		{
+			"id": 3,
+			"label": {
+				"lang_tag": "ui7_door_operation_faulted",
+				"text": "Opener operation faulted"
+			},
+			"serviceId": "urn:upnp-org:serviceId:SwitchPower1",
+			"serviceStateTable": {
+				"Status": {
+					"value": "7",
+					"comparisson": "="
+				}
+			}
+		}
+	],
+	"device_type": "urn:upnp-org:serviceId:SwitchPower1"
+}
